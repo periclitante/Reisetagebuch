@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Reisetagebuch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background-color: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            position: relative;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 70vh;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        header video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.4rem;
+            color: #eee;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .full-width {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(50% - 50vw);
+        }
+
+        hr {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        section {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .citacao1 {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .citacao1 img {
+            width: 100%;
+            display: block;
+        }
+
+        .citacao1::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+        }
+
+        .citacao1 blockquote {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 4rem;
+            color: #f2f2f2;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .citacao1 blockquote footer {
+            margin-top: 1rem;
+            font-size: 1rem;
+            background: none;
+            color: #ddd;
+        }
+
+        .image-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+          padding: 0 5vw;
+          width: 100%;
+        }
+
+        .image-row1 {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+          padding: 0 5vw;
+          width: 100%;
+        }
+
+        .image {
+          aspect-ratio: 3 / 4;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .image1 {
+          aspect-ratio: 3 / 6;  
+          background-size: cover;
+          background-position: center;
+        }
+
+        .img-left {
+          background-image: url("20250420_112016.jpg");
+        }
+
+        .img-left1 {
+          background-image: url("20250913_093440.jpg");
+        }
+
+        .img-left2 {
+          background-image: url("faustus.jpeg");
+        }
+
+        .img-center {
+          background-image: url("20250420_112150.jpg");
+          transform: translateY(40px);
+        }
+
+        .img-center1 {
+          background-image: url("rosacea.jpeg");
+          transform: translateY(-40px);
+        }
+
+        .img-right {
+          background-image: url("20250420_112025.jpg");
+        }
+
+        .img-right1 {
+          background-image: url("20250910_122636.jpg");
+        }
+
+        .img-right2 {
+          background-image: url("1.jpg");
+        }
+
+        .video-wrapper {
+          position: relative;
+          width: 100vw;
+        }
+
+        .video-wrapper video {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .video-text {
+          position: absolute;
+          top: 50%;
+          right: 5vw;
+          transform: translateY(-50%);
+  
+          color: black;
+          max-width: 35%;
+          text-align: right;
+
+          background: #f5f5f5;
+          padding: 16px 20px;
+        }
+
+        section p {
+            margin-bottom: 1.5rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .img1 {
+            width: 50%;
+            height: auto;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        main video {
+            width: 100%;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #ffffff;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <video autoplay loop muted playsinline>
+            <source src="waldrb.mp4" type="video/mp4">
+            Seu navegador não tem suporte para vídeos HTML5.
+        </video>
+
+        <h1>Reisetagebuch</h1>
+        <p>
+            Vom Amazonas zum Schwarzwald
+        </p>
+    </header>
+
+    <main>
+
+        <hr>
+
+        <section>
+        <p>
+            Ich bin am 6. September nach Deutschland aufgebrochen; die erste Flugverbindung war in Paramaribo. Zwischen Belém und Suriname lag der Urwald, ich war am Fenster. Die Landschaft schien mir
+            zugleich sublim und traurig. Da waren Bäume, ein ganzes Meer davon, unterbrochen von häufiger Lichtungen, die nicht
+            von der Natur geschaffen worden waren. Blickt man in einer dieser Lichtungen, sieht man entweder so einen trocknen Boden, dass das Blicken weh tut, oder einen viskosen,
+            leicht goldnen Schlamm. Ein Mann neben mir bemerkt es: „Você viu as queimadas?".
+        </p>
+        </section>
+
+        <hr>
+
+        <section class="citacao1 full-width">
+        <img src="20251123_114733.jpg">
+        <blockquote>
+            „[...] er sah, sah eine Landschaft, ein tropisches Sumpfgebiet unter dickdunstigem Himmel, feucht, üppig
+            und ungeheuer, eine Art Urweltwildnis aus Inseln, Morästen und Schlamm führenden Wasserarmen, - sah aus
+            geilem Farrengewucher, aus Gründen von fettem, gequollenem und abenteuerlich blühendem Pflanzenwerk haarige
+            Palmenschäfte nah und ferne emporstreben, sah wunderlich ungestalte Bäume ihre Wurzeln durch die Luft in den
+            Boden, in strockende, grünschattig spiegelnde Fluten versenken, wo zwischen schwimmenden Blümen, die milchweiß
+            und groß wie Schüsseln waren, Vögel von fremder Art, hochschultrig, mit unförmigen Schnäbeln, im Seichten standen
+            und unbeweglich zur Seite blickten, sah zwischen den knotigen Rohrstämmen des Bambusdickichts die Lichter
+            eines kauernden Tigers funkeln - und fühlte sein Herz pochen vor Entsetzen und rätselhaften Verlangen."
+        <footer>Thomas Mann, <em>Der Tod in Venedig</em></footer>
+        </blockquote>
+        </section>
+
+        <section>
+        <p>
+            Werner Herzog hat Amazonas so beschreibt: „Ein Gebiet, das Gott, wenn er existiert, im Zorn geschöpft hat". Auch die
+            ersten Eroberer und Naturforscher, als sie erstmals Amazonas prüften, haben den Urwald als eine „grüne Hölle" bezeichnet. 
+        </p>
+        <p>
+            Wie ich es sehe, ist der Wald wütend. Der Fluss ist vor allem zornig. Die Pororoca, was könnte sie sein, wenn nicht ein Schlachtruf? 
+            Ein Schmerzensschrei vielleicht?
+        </p>
+        </section>
+
+        <section class="video-wrapper full-width">
+            <video autoplay loop muted playsinline>
+                <source src="wasser.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+            <div class="video-text">
+            <p>"19 de Maio</p>
+            <p>
+"[...] A foz do Amazonas é uma dessas grandezas tão grandiosas que ultrapassam as percepções fisiológicas do homem. Nós só podemos monumentalizá-las na inteligência. O que a retina bota na consciência é apenas um mundo de águas sujas e um matinho sempre igual no longe mal percebido das ilhas. O Amazonas prova decisivamente que a monotonia é um dos elementos mais grandiosos do sublime. É incontestável que Dante e o Amazonas são igualmente monótonos. [...]”
+            </p>
+            <p>— Mário de Andrade, <em>O Turista Aprendiz</em></p>
+             </div>
+        </section>
+
+
+          <section class="image-row">
+             <div class="image img-left"></div>
+             <div class="image img-center"></div>
+             <div class="image img-right"></div>
+          </section>
+
+        <section>
+            <p>
+            Drei Tage nach meiner Anreise habe ich zusammen mit zwei Kolleginnen ein Stadttour durch Freiburg gemacht.
+            Unserer Stadtführer hat uns alles über die Geschichte seit der Zähringer-Zeit erzählt. Wie Vauban eine Krone
+            um die Stadt gebaut hatte, wie die Habsburger sie zerstört haben. Ich habe auch die traurige Geschichten des Krieges
+            überall erfährt. Diese war eine Stadt, die mehr als einmal zerstört wurde, und ich würde es nicht ahnen,
+            wenn man mir nichts erzählt hätte. Der Mensch ist sowohl ein schrecklicher Vernichter als auch ein hochbegabter Wiederaufbauer.
+            Er muss die beiden Tatsachen immer im Gedächtnis bewahren.
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <p>
+            Der Stadtführer hat uns endlich zum Freiburger Münster angeleitet. Der leere, gebohrte Turm hat mich erstaunt.
+            Wie ein dornenreiches und trotzdem handgemachtes Pflanzenwerk. Er war einem Tannenbaum sehr ähnlich. Es wurde gefragt, wie wir das Münster funden.
+            Meine Antwort: "komplex".
+            </p>
+            <p>
+            Aber ein Münster ist, wie Gott, unendlich einfach.
+            </p>
+            <p>
+            In Straßburg habe ich ein anderes gesehen, das Liebfrauenmünster, Notre-Dame-de-Strasbourg. Das Glaswerk beleuchtet die innere Nacht einem bunten Mond gleich.
+            Die Säulen erwecken den genauen Eindruck, den Rodin erwähnt hat: als ob man unter winterlichen Bäumen sich befände. Es fühlt sich an, als hätte ich mich in der Nacht unter diesen Bäumen aus Stein verlaufen.
+            </p>
+        </section>
+            
+            <section class="image-row">
+             <div class="image img-left1"></div>
+             <div class="image img-center1"></div>
+             <div class="image img-right1"></div>   
+            </section>
+
+        <section>
+        <p>
+        Alle meine Bestrebungen werden auf einmal sinnlos, engherzig. So ein Gefühl erfuhr ich nur als Kind, als ich den Sumaúma erstmals sah.
+        </p>
+        </section>
+
+        <section class="full-width">
+            <img src="20251123_114940.jpg">
+        </section>
+
+        <section>
+        <p>
+        In dieser Stadt, die in der Nähe des Schwarzwaldes liegt, ist die Natur nicht so ungeheuer wie in Belém. Dass ich im Herbst angekommen bin, trägt dazu bei.
+        Es sind hier Kinder, wie ich damals war, und sie spielen unter den Bäumen im Park. Der Wind ist schon ziemlich kalt und ich wundere mich, ob sie beim Rennen die Kälte nicht fühlen.
+        Im Herbst die Kastanienbäume lassen ihre Früchte frei und sie sammeln sie auf. Einmal pro Jahr können sie die Kastanien gegen Haribobären tauschen. Jedoch dieses Jahr wurde die Kastanienaktion wegen eines Virus abgesagt.
+        </p>
+        </section>
+
+        <section class="citacao1 full-width">
+        <img src="arkadien.jpeg">
+        <blockquote>
+            A VIAGEM PARA O NOVO PAÍS<br>
+            <br>
+            [...]<br>
+            <br>
+            E poderemos caminhar como crianças sobre a relva fria<br>
+            Diante dos ventos e das tempestades.<br>
+        <footer>Paulo Plínio Abreu</footer>
+        </blockquote>
+        </section>
+
+        <section>
+        <p>
+        Das letzte Andenken meiner Reise kommt aus Staufen. Dort, in einem Hotelzimmer, ist der echte Doktor Faust nach einem Versuch, Gold herzustellen,
+        gestorben. Er hatte vermutlich einen Pakt mit dem Teufel absgeschlossen. Er war nicht der erste Goldsucher und wäre auch nicht der letzte.
+        Was für einen Unterschied zwischen Faust und Antonius, der Große, dessen Bild ich im Augustinermuseum gesehen habe und den man auf Portugiesisch "Antão" heißt. Er wurde vom Teufel mit einem Haufen Gold
+        verlockt und wurde nicht bezwungen. Die beiden Männer werden mit einem Chor von Dämonen dargestellt.
+        </p>
+        </section>
+        
+        <section class="image-row1">
+             <div class="image1 img-left2"></div>
+             <div class="image1 img-right2"></div>   
+        </section>
+
+        <hr>
+
+        <section>
+        <p>
+        Wir sind heraufgestiegen, um die Burgruinen zu schauen. Für denen, die aus einem wässrigen Flachland kommen, ist der windige Berg (d.h. jede Unebenheit) eine Unnatürlichkeit.
+        <br>Ich bin endlich zum Spitz angekommen und habe mich niedergesessen. Neben mir war eine nette alte Frau aus Saarland, die nach Brasilien reisen wollte.
+        Gegen das Ende unseres Plaudern sagt sie: „Goethe hat gesagt, man reist nicht, um anzukommen, sondern um unterwegs zu sein."
+        </p>
+            <img src="20250919_120156.jpg">
+        </section>
+
+        <hr>
+
+        <section>
+        <hr>
+        <p>
+        Nach ein paar Tagen steige ich einen anderen Berg, diesmal durch die Seilbahn. Die Natur scheint mir jetzt geheimnisvoll, obwohl nicht weniger bequem. Schwarze Böcke grasen ab, ihre Glocken klingen. Ich schaue, während eine Biene versucht, auf meinem Glas zu landen.
+        Und damit nehme ich Abschied von Deutschland.
+        </p>
+        <video controls>
+            <source src="20250921_105840_1.mp4" type="video/mp4">
+            Seu navegador não tem suporte para vídeos HTML5.
+        </video>
+
+        <hr>
+        <hr>
+           
+        <img src="wald.jpeg">
+        <img src="20250921_102241.jpg">
+        </section>
+
+        <hr>
+
+        <section>
+        <p>
+        Ich nehme den Bus zum Flughafen, bevor der Tag beginnt. Auf dem Weg werde ich von der Stickstofffabrik in Ottmarsheim begrüßt.
+        Die Wolken sind nicht vom Rauch zu unterscheiden. Türme und Hortonsphären glänzen wie Sterne in der Nacht.
+        All das erinnert mich seltsamerweise an das Münster.
+        </p>
+        </section>
+
+        <hr>
+        <hr>
+
+        <section>
+        <p>
+        In Belém findet die Klimakonferenz statt. Ich nutze die freie Tage, um die Stadt erneut zu sehen. Was mir am besten gefällt, ist die Sebastião Salgado-Ausstellung.
+        Indem ich jedes Photo von Monte Roraima betrachte, kommen mir die Geschichten über die Taten von Macunaíma vor.
+        Man sieht den Nebel über dem Fluss, der auch Fluss ist. Alles ist so eintönig. Der Zorn jener Götter ist verstehbar - der war aus Langeweile. Aus Langeweile hatte Macunaíma die Landschaft von Monte Roraima geschafft.
+        Und sobald seine Brüder den fruchtbaren Weltbaum während der Hungerzeit gefunden haben, hat er (oder Ma'anápe) den Baum abgehauen.
+        </P>
+        </section>
+
+        <section class="citacao1 full-width">
+            <img src="20251119_140527.jpg">
+            <blockquote>
+            „Makunaíma ging dann auf die andere Seite des Roroíma und lebt dort
+wohl noch heute. Er verwandelte dort Männer und Frauen in Felsen, ebenso
+Saúbas, Tapire und Wildschweine. Ein Fels nahe bei Koimélemong ist ein
+Schwein, das den Kopf in die Erde steckt. An dem Gebirge Aruayáng
+findet sich ein groBer Topf, iiber den eine Korbwanne gestülpt ist; bei der
+Serra do Mel eine in Stein verwandelte Jagdtasche. Sehr viele dieser Steine
+finden sich im Lande der Engländer, z. B. Fische, eine Frau mit flacher
+Korbwanne auf dem Kopf usw."<br>
+<br>
+            „Da sagte Ma'anápe, der Verfluchte, zu seinem Bruder: „Morgen wollen wir den Baum umhauen!" Akuli, der sehr klug war und alles vorher wuBte,
+sagte: „Nein, wir wollen ihn nicht umhauen! Wir wollen nur Früchte holen!
+Wenn du den Baum umhaust, gibt es ein groBes Wasser!" Aber Ma'anápe
+war störrisch, nahm eine Axt und hieb in den Stamm des Baumes, indem
+er zu ihm sagte: „mapaza-yég elupa-yég makúpa-yég palúlu-yeg!" Da
+wurde das Holz immer weicher, und die Axt drang immer weiter ein. Akuli
+warnte noch immer: „Schlag ihn nicht um! Schlag ihn nicht um! Sonst
+kommt viel Wasser!" Er nahm alle Fruchtschalen und Bienenwachs und
+verstopfte sofort alle Löcher, die Ma'anápe schlug. Ma'anápe hieb immer
+weiter. Als er „palúlu-yeg" sagte, wurde der Stamm ganz weich, und die Axt
+drang tief ein. Es blieb nur ein Stuck vom Stamm übrig. Da sagte der
+andere Bruder Anzikilan: „waína-yeg!" Da blieb das andere Stuck des
+Stammes ganz hart, und die Axt kam nicht weiter. Aber Ma'anápe sagte
+wieder: „elupa-yég makúpa-yég palúlu-yeg!" Da wurde der Stamm wieder
+ganz weich, und er schlug den Baum um."
+        <footer>Theodor Koch-Grünberg, <em>Mythen und Legenden der Taulipang- und Arekuna-Indianer</em></footer>
+        </section>
+
+        <section class="img1">
+        <img src="20251123_112442.jpg">
+        </section>
+
+        <hr>
+
+        <section>
+        <p> 
+        Die Konferenz ist vorbei und man erreicht keinen Kompromiss. Einige sind hierher gekommen und haben gesagt, dass sie alles höllisch langweilig gefunden haben.
+        Die Welt stirbt aus Langeweile. Palúlu-yeg!
+        </p>
+        </section>
+
+        <hr>
+
+        <section>
+        <img src="jacare.jpg">
+        </section>
+    </main>
+
+    <footer>
+        © 2026 — Ayrton Monteiro
+    </footer>
+
+</body>
+</html>
